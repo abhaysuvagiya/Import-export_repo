@@ -1,0 +1,61 @@
+
+{% extends 'myapp/base2.html' %}
+{% load static %}
+{% block content %}
+<div class="flex ml-20">
+ 
+<div class="w-100 ml-40 ">
+  <div class="container  mx-auto shadow-lg p-5  mt-20  border-4 bg-white">
+  <h1 class="ml-10 my-2 mb-8 text-2xl text-blue-500 font-bold">Upload Your file</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mx-10 mb-8 flex">
+      <p>
+        <input type="file" name="csv_file" required="" id="id_csv_file"class="bg-gray  rounded-lg text-black font-bold">
+      </p>
+    </div>
+    
+    <div class="mx-10 mt-8">
+      <button type="submit" class="bg-blue-500 px-5 py-2 rounded-lg text-white font-bold">
+        Uplode
+      </button>
+    </div>
+    
+  </form>
+  </div>
+
+</div>
+<div class="m-20 pt-20" >
+  <img src="{% static 'images/min.png' %}" alt="W3Schools.com"  width="130" height="140">
+  
+</div>
+</div>
+<script>
+  window.addEventListener('load', function () {
+    var csvFileInput = document.getElementById('id_csv_file');
+    csvFileInput.focus();
+  });
+
+  const fileInput = document.getElementById('id_csv_file');
+  fileInput.addEventListener('change', function () {
+    const file = fileInput.files[0];
+    if (!file || file.type !== 'text/csv') {
+      alert('Please upload a CSV file.');
+      fileInput.value = '';
+    }
+  });
+
+  const uploadButton = document.getElementById('upload-button');
+  const loadingAnimation = document.getElementById('loading-animation');
+
+  uploadButton.addEventListener('click', () => {
+    uploadButton.classList.add('hidden');
+    loadingAnimation.classList.remove('hidden');
+    setTimeout(() => {
+      uploadButton.classList.remove('hidden');
+      loadingAnimation.classList.add('hidden');
+      // additional action after the animation ends
+    }, 3000);
+  });
+</script>
+{% endblock %}

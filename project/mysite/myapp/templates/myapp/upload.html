@@ -1,0 +1,26 @@
+{% extends 'myapp/base2.html' %}
+{% load static %}
+{% block content %}
+<div class="m-20">
+    <b><h1 class="ml-20 my-2 mb-8 text-2xl text-green-500 font-bold">login Successfully</h1></b>
+</div>
+
+<div class="w-80 ml-40 ">
+    <div class="container  mx-auto shadow-lg p-5  mt-20  border-4 bg-white">
+    <h3 class="ml-10 my-2 mb-8 text-black-300 font-bold">Click Here For Go To Upload Page </h3>
+
+      {% csrf_token %}
+      
+      <div class="mx-10 mt-8">
+        <button type="submit" class="bg-blue-500 px-5 py-2 rounded-lg text-white font-bold">
+            <a  href="{% url 'upload_csv' %}">Go TO Upload</a>
+        </button>
+      </div>
+      
+    
+    </div>
+  
+  </div>
+
+{% endblock %}
+

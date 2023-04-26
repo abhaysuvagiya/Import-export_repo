@@ -1,0 +1,67 @@
+{% block body %}
+<h1 class="text-2xl m-10">&#128102; Login User</h1>
+<div class="container ">
+    <form method="POST" class="bg-white shadow-md m-10 w-2/5 rounded px-8 pt-6 pb-8 mb-4">
+        {% csrf_token %}
+        <div class="mb-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="Username">Username</label>
+            <div class="shadow text-gray-700 appearance-none border rounded py-2 px-3 mr-10 ">{{ form.username }}</div>
+        </div>
+        <div class="mb-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="Username">Password</label>
+            <div class="shadow text-gray-700 appearance-none border rounded py-2 px-3 mr-10 ">{{ form.password }}</div>
+        </div>
+        
+        
+        <button class="text-white bg-green-500 px-5 py-2" type="submit">Login</button>
+    </form>
+</div>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+		}
+		.container {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+			padding: 20px;
+			margin: auto;
+			max-width: 400px;
+			margin-top: 100px;
+		}
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			border-radius: 4px;
+		}
+		button {
+			background-color: #0044ff;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			border-radius: 4px;
+		}
+		button:hover {
+			background-color: #45a049;
+		}
+	</style>
+</head>
+
+</html>
+
+{% endblock %}

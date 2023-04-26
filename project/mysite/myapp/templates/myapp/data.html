@@ -1,0 +1,61 @@
+
+<style>
+    h1 {
+    display: block;
+    font-size: 2em;
+    padding-top: 2px;
+    font-weight: bold;
+    color: #5c59ff;
+   
+    }
+    table {
+    
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-left: 25px;
+    }
+    th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 3px;
+    }
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td.element.style {
+    width: 140.450;
+}
+.dataframe td:nth-child(10) {
+  width: 300px;
+  
+}
+a:hover {
+  background-color: rgb(0, 132, 255)
+}
+</style>
+{% block content %}
+<div style="display: flex; ">
+<h1 style="margin-left: 20px;">📒.....Data</h1>
+<div style="margin-left: auto;">
+<button type="submit" id="but" style=" background-color: rgb(117, 87, 253);  border-radius: 10px; border: white; height: 40px; margin-right: 40px; margin-top: 30px;">
+    <a href="{% url 'download_excel' %}" class="btn btn-primary" style="color: aliceblue; "><b>Download</b></a>
+</button>
+<button type="submit" id="but" style=" background-color: rgb(117, 87, 253);  border-radius: 10px; border: white; height: 40px; margin-right: 40px; margin-top: 30px;">
+     <a href="{% url 'upload_csv' %}" class="btn btn-primary" style="color: aliceblue;  "><b>Goback</b></a>
+</button>
+</div>
+</div>
+<hr style="border-bottom: solid rgb(126, 126, 126); margin-bottom: 20px;">
+
+
+{{ data|safe }}
+
+
+{% endblock %}
